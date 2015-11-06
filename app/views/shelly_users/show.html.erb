@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<%= YAML::dump(@shelly_user) %>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @shelly_user.first_name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @shelly_user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shelly_user.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shelly_user.description %>
+</p>
+
+<p>
+  <strong>Activated:</strong>
+  <%= @shelly_user.activated %>
+</p>
+
+<%= link_to 'Edit', edit_shelly_user_path(@shelly_user) %> |
+<%= link_to 'Back', shelly_users_path %>

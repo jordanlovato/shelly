@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shelly Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Description</th>
+      <th>Activated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shelly_users.each do |shelly_user| %>
+      <tr>
+        <td><%= shelly_user.first_name %></td>
+        <td><%= shelly_user.last_name %></td>
+        <td><%= shelly_user.email %></td>
+        <td><%= shelly_user.description %></td>
+        <td><%= shelly_user.activated %></td>
+        <td><%= link_to 'Show', shelly_user %></td>
+        <td><%= link_to 'Edit', edit_shelly_user_path(shelly_user) %></td>
+        <td><%= link_to 'Destroy', shelly_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shelly user', new_shelly_user_path %>
